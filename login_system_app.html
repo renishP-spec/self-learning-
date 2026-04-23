@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login System</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f4f4f4;display:flex;justify-content:center;align-items:center;height:100vh;margin:0}
+.card{background:#fff;padding:30px;border-radius:16px;box-shadow:0 10px 25px rgba(0,0,0,.1);width:320px}
+h2{text-align:center;margin-top:0}
+input{width:100%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:8px;box-sizing:border-box}
+button{width:100%;padding:10px;border:none;border-radius:8px;background:#111;color:#fff;cursor:pointer}
+button:hover{opacity:.9}
+#msg{text-align:center;margin-top:12px;font-size:14px}
+</style>
+</head>
+<body>
+<div class="card">
+<h2>Login</h2>
+<input id="user" placeholder="Username">
+<input id="pass" type="password" placeholder="Password">
+<button onclick="login()">Sign In</button>
+<div id="msg"></div>
+</div>
+<script>
+function login(){
+ const u=document.getElementById('user').value;
+ const p=document.getElementById('pass').value;
+ const msg=document.getElementById('msg');
+ if(u==='admin' && p==='1234'){
+   msg.textContent='Login successful';
+   msg.style.color='green';
+ } else {
+   msg.textContent='Invalid username or password';
+   msg.style.color='red';
+ }
+}
+</script>
+</body>
+</html>
